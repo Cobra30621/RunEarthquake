@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4360263131287750975, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_Name
-      value: Knife
+      value: hand
       objectReference: {fileID: 0}
     - target: {fileID: 4617944279097545799, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: ItemType
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7959667064187357442, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1605607696, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
+      objectReference: {fileID: -316277015, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     - target: {fileID: 7959667064187357442, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_Color.b
-      value: 0.5471698
+      value: 0.9716981
       objectReference: {fileID: 0}
     - target: {fileID: 7959667064187357442, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_Color.g
-      value: 0.5471698
+      value: 0.8188521
       objectReference: {fileID: 0}
     - target: {fileID: 7959667064187357442, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_Color.r
-      value: 0.5471698
+      value: 0.53626734
       objectReference: {fileID: 0}
     - target: {fileID: 8397582450370671833, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_LocalPosition.x
