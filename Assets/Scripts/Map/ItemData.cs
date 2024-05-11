@@ -18,9 +18,24 @@ namespace Map
     [Serializable]
     public class ItemInfo
     {
+        public ItemType itemType;
         public string title;
         public string description;
 
+        public Sprite sprite;
         public Item prefab;
+
+        public ItemInfo()
+        {
+            
+        }
+        
+        public ItemInfo(ItemInfo info)
+        {
+            itemType = info.itemType;
+            title = info.title;
+            description = info.description;
+            sprite = info.sprite;
+        }
     }
 }

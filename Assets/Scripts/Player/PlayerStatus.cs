@@ -10,6 +10,7 @@ namespace Player
         public int score;
         
         public static UnityEvent<int> OnHealthChanged = new UnityEvent<int>();
+        public static UnityEvent OnGameOver = new UnityEvent();
         
         private static PlayerStatus _instance;
         public static PlayerStatus Instance
@@ -27,7 +28,7 @@ namespace Player
         public void Init()
         {
             score = 0;
-            SetHealth(health);
+            SetHealth(maxHealth);
         }
 
         public void TakeDamage(int damage)
@@ -46,6 +47,12 @@ namespace Player
             if (health > maxHealth)
             {
                 health = maxHealth;
+            }
+
+            if (health <= 0)
+            {
+                health = 0;
+                OnGameOver.Invoke();
             }
             
             OnHealthChanged.Invoke(health);

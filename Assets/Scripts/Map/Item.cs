@@ -1,3 +1,4 @@
+using Player;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -5,8 +6,6 @@ namespace Map
 {
     public class Item : MapObject
     {
-        public ItemType ItemType;
-
         public ItemInfo ItemInfo;
 
         public void SetItemInfo(ItemInfo itemInfo)
@@ -20,6 +19,7 @@ namespace Map
             Debug.Log("獲得道具");
             
             // Destroy(gameObject);
+            ItemHandler.Instance.GainItem(ItemInfo);
             MapHelper.DestroyAllItems();
         }
     }
@@ -27,8 +27,10 @@ namespace Map
 
 public enum ItemType
 {
+    None,
     Food,
     Knife,
     Light,
-    Hand
+    Hand,
+    
 }

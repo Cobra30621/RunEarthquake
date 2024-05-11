@@ -3,6 +3,7 @@ using Map;
 using Player;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameProgress
 {
@@ -44,6 +45,8 @@ namespace GameProgress
 
         private void Start()
         {
+            PlayerStatus.OnGameOver.AddListener(EndGame);
+            
             StartGame();
         }
 
@@ -53,8 +56,21 @@ namespace GameProgress
             _mapHandler.StartGame();
             _phase = 1;
             PlayerStatus.Instance.Init();
+            ItemHandler.Instance.InitItems();
             
             SetGameState(new PreparingState(true));
+        }
+
+        private void EndGame()
+        {
+            PauseGame(true);
+            StartCoroutine(GameOverCoroutine());
+        }
+
+        private IEnumerator GameOverCoroutine()
+        {
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("end");
         }
 
         private void Update()
