@@ -22,13 +22,14 @@ namespace UI
             for (int i = 0; i < itemInfos.Length; i++)
             {
                 var itemInfo = itemInfos[i];
-                if (itemInfo != null)
+                if (itemInfo.itemType != ItemType.None)
                 {
+                    images[i].gameObject.SetActive(true);
                     images[i].sprite = itemInfo.sprite;
                 }
                 else
                 {
-                    images[i].sprite = null;
+                    images[i].gameObject.SetActive(false);
                 }
             }
         }

@@ -56,19 +56,19 @@ namespace Player
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                
+                ItemHandler.Instance.UseItem(0);
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
-                
+                ItemHandler.Instance.UseItem(1);
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
+                ItemHandler.Instance.UseItem(2);
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                
+                ItemHandler.Instance.UseItem(3);
             }
         }
     }
