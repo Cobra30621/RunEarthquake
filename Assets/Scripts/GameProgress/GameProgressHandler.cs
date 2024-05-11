@@ -1,5 +1,6 @@
 using System.Collections;
 using Map;
+using Player;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -14,13 +15,19 @@ namespace GameProgress
 
         private Coroutine stateCoroutine;
 
+        public int phaseCount;
+
+        public StateType CurrentStateType => _gameState.GetStateType();
+
+        public MapHandler MapHandler => _mapHandler;
+
+        [SerializeField] private MapHandler _mapHandler;
+
         public void RunCoroutine(IEnumerator enumerator)
         {
             stateCoroutine = StartCoroutine(enumerator);
         }
 
-        public StateType CurrentStateType => _gameState.GetStateType();
-        
         [Button("暫停遊戲")]
         public void PauseGame(bool pause)
         {
@@ -35,10 +42,6 @@ namespace GameProgress
             }
         }
 
-        public MapHandler MapHandler => _mapHandler;
-
-        [SerializeField] private MapHandler _mapHandler;
-
         private void Start()
         {
             StartGame();
@@ -48,6 +51,9 @@ namespace GameProgress
         public void StartGame()
         {
             _mapHandler.StartGame();
+            phaseCount = 1;
+            PlayerStatus.Instance.Init();
+            
             SetGameState(new PreparingState());
         }
 
@@ -57,10 +63,16 @@ namespace GameProgress
         }
 
 
+        public void SetNextPhaseCount()
+        {
+            phaseCount++;
+        }
+        
         public void SetGameState(GameState newState)
         {
             if(stateCoroutine != null)
                 StopCoroutine(stateCoroutine);
+            
             Debug.Log($"SetGameState: {newState.GetStateType()}");
             _gameState = newState;
             newState.Init(this);
@@ -71,6 +83,6 @@ namespace GameProgress
 
     public enum StateType
     {
-        Idle, Preparing, Running
+        Preparing, Running
     }
 }

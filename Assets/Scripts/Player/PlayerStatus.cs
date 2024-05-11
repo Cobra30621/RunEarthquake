@@ -27,23 +27,22 @@ namespace Player
         public void Init()
         {
             score = 0;
-            health = maxHealth;
+            SetHealth(health);
         }
 
         public void TakeDamage(int damage)
         {
-            health -= damage;
-            if (health <= 0)
-            {
-                health = 0;
-            }
-            
-            OnHealthChanged.Invoke(health);
+            SetHealth(health - damage);
         }
 
         public void Heal(int heal)
         {
-            health += heal;
+            SetHealth(health + heal);
+        }
+
+        private void SetHealth(int value)
+        {
+            health = value;
             if (health > maxHealth)
             {
                 health = maxHealth;

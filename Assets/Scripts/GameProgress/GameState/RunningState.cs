@@ -40,6 +40,7 @@ namespace GameProgress
 
             if (_timer.Finished)
             {
+                _gameContext.SetNextPhaseCount();
                 _gameContext.SetGameState(new PreparingState());
             }
         }

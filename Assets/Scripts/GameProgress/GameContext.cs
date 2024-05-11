@@ -15,6 +15,8 @@ namespace GameProgress
         void PauseGame(bool pause);
         
         MapHandler MapHandler { get;  }
-  
+
+        void SetNextPhaseCount();
+
     }
 }
