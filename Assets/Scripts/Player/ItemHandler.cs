@@ -2,6 +2,7 @@ using System.Linq;
 using Core;
 using Map;
 using Sirenix.OdinInspector;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,10 +10,11 @@ namespace Player
 {
     public class ItemHandler : SingletonWithSerialized<ItemHandler>
     {
-
         public static UnityEvent<ItemInfo[]> OnItemChanged = new UnityEvent<ItemInfo[]>();
         
         public ItemInfo[] items = new ItemInfo[4];
+
+        [SerializeField] private GainItemUI _gainItemUI;
         
         [Button("獲得道具")]
         public void GainItem(ItemInfo info)
@@ -24,6 +26,7 @@ namespace Player
                 items[index] = new ItemInfo(info);
             }
             
+            _gainItemUI.ShowUI(info);
             OnItemChanged.Invoke(items);
         }
 
