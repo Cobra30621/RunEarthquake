@@ -8,8 +8,15 @@ namespace Map
 
     public abstract class MapObject : MonoBehaviour
     {
+        public int [] Rows;
+        
         private float moveSpeed = 1.0f; // MapObject 的移動速度
 
+        public void SetRow(int[] rows)
+        {
+            Rows = rows;
+        }
+        
         public void SetSpeed(float speed)
         {
             moveSpeed = speed;
