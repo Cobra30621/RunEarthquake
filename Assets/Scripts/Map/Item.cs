@@ -32,5 +32,8 @@ public enum ItemType
     Knife,
     Light,
     Hand,
+    SNS,
+    DeadlineJob,
+    BrokenLight,
     
 }
