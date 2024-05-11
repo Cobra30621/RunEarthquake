@@ -19,6 +19,12 @@ namespace GameProgress
         void SetNextPhaseCount();
         
         int CurrentPhase { get; }
+        
+        float BaseSpeed { get; }
+        
+        float RunningSpeed { get; }
+        
+        float SpawnInterval { get; }
 
     }
 }

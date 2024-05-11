@@ -12,7 +12,6 @@ namespace GameProgress
 
         private bool _isFirstPhase;
 
-        private float baseSpeed = 4;
 
         public PreparingState(bool isFirstPhase = false)
         {
@@ -32,7 +31,7 @@ namespace GameProgress
 
         private IEnumerator PrepareCoroutine()
         {
-            _gameContext.MapHandler.SetSpeed(baseSpeed);
+            _gameContext.MapHandler.SetSpeed(_gameContext.BaseSpeed);
             yield return TextDisplay.Instance.ShowText("準備階段", 1f);
             
             

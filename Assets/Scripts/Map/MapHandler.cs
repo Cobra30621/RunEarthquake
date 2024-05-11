@@ -15,11 +15,10 @@ namespace Map
         [InlineEditor]
         [SerializeField] private ItemData _itemData;
         
-        public GameObject mapObjectPrefab; // MapObject 的預置物
+        
         public int numRows = 3; // 地圖的行數
-        public float spawnInterval = 2.0f; // 產生 MapObject 的間隔時間
 
-        public float scrollSpeed;
+        private float scrollSpeed;
         
         [SerializeField] private MapScroller mapScroller;
 
@@ -29,9 +28,6 @@ namespace Map
         public void StartGame()
         {
             mapScroller.scrollSpeed = scrollSpeed;
-            
-            // 開始定期產生 MapObject
-            // InvokeRepeating("RandomSpawnItem", spawnInterval, spawnInterval);
         }
 
         #region 產生物件
@@ -111,6 +107,7 @@ namespace Map
         // 改變所有 MapObject 的速度
         public void SetSpeed(float newSpeed)
         {
+            scrollSpeed = newSpeed;
             var mapObjects = MapHelper.FindAllMapObject();
             foreach (var mapObject in mapObjects)
             {

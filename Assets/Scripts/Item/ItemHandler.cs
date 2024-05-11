@@ -15,7 +15,6 @@ namespace Player
         
         public ItemInfo[] items = new ItemInfo[4];
 
-        [SerializeField] private PlayerController _playerController;
         [SerializeField] private GainItemUI _gainItemUI;
 
         [SerializeField] private KnifeEffect _knifeEffect;
@@ -31,7 +30,7 @@ namespace Player
                 items[index] = new ItemInfo(info);
             }
             
-            _gainItemUI.ShowUI(info);
+            _gainItemUI?.ShowUI(info);
             OnItemChanged.Invoke(items);
         }
 
@@ -57,7 +56,7 @@ namespace Player
                 case ItemType.Hand:
                     break;
                 case ItemType.Knife:
-                    var currentRow = _playerController.CurrentRow;
+                    var currentRow = PlayerController.CurrentRow;
                     var x = _mapHandler.GetSingleRow(currentRow).position.x;
                     _knifeEffect.ShowKnife(x);
                     break;

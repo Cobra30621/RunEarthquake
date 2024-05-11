@@ -7,14 +7,15 @@ namespace Player
 {
     public class PlayerController : SerializedMonoBehaviour
     {
-        [SerializeField] private int currentRow = 1;
+       
 
         [SerializeField] private GameObject player;
 
         [SerializeField] private MapHandler _mapHandler;
         [SerializeField] private GameProgressHandler _gameProgressHandler;
 
-        public int CurrentRow => currentRow;
+        public static int currentRow = 1;
+        public static int CurrentRow => currentRow;
         
         void Update()
         {

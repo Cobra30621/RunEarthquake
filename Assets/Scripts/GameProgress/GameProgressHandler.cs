@@ -24,6 +24,40 @@ namespace GameProgress
 
         [SerializeField] private MapHandler _mapHandler;
 
+        public int CurrentPhase => _phase;
+        public float BaseSpeed => _baseSpeed;
+        public float RunningSpeed => _baseSpeed + _addSpeed * (CurrentPhase - 1);
+        public float SpawnInterval => _spawnInterval;
+        
+        [Title("參數")]
+        [LabelText("基礎移動速度")]
+        [SerializeField] private float _baseSpeed = 4f;
+        [LabelText("每階段後加乘的速度")]
+        [SerializeField] private float _addSpeed = 2f;
+        
+        [LabelText("物品生成頻率")]
+        [SerializeField] private float _spawnInterval = 8f;
+        
+        
+
+        private void Start()
+        {
+            PlayerStatus.OnGameOver.AddListener(EndGame);
+            
+            StartGame();
+        }
+
+        [Button("開始遊戲")]
+        public void StartGame()
+        {
+            _mapHandler.StartGame();
+            _phase = 1;
+            PlayerStatus.Instance.Init();
+            ItemHandler.Instance.InitItems();
+            
+            SetGameState(new PreparingState(true));
+        }
+
         public void RunCoroutine(IEnumerator enumerator)
         {
             _stateCoroutine = StartCoroutine(enumerator);
@@ -47,25 +81,7 @@ namespace GameProgress
                 Time.timeScale = 1;
             }
         }
-
-        private void Start()
-        {
-            PlayerStatus.OnGameOver.AddListener(EndGame);
-            
-            StartGame();
-        }
-
-        [Button("開始遊戲")]
-        public void StartGame()
-        {
-            _mapHandler.StartGame();
-            _phase = 1;
-            PlayerStatus.Instance.Init();
-            ItemHandler.Instance.InitItems();
-            
-            SetGameState(new PreparingState(true));
-        }
-
+        
         private void EndGame()
         {
             PauseGame(true);
@@ -89,8 +105,7 @@ namespace GameProgress
             _phase++;
         }
 
-        public int CurrentPhase => _phase;
-
+        
         public void SetGameState(GameState newState)
         {
             if(_stateCoroutine != null)

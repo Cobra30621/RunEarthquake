@@ -4,7 +4,7 @@ namespace Map
 
     public class MapScroller : MonoBehaviour
     {
-        public float scrollSpeed = 1.0f; // 地圖滑動的速度
+        public float scrollSpeed; // 地圖滑動的速度
         public float mapHeight = 10.0f; // 地圖的高度，用於循環滑動
 
         [SerializeField] private SpriteRenderer mapSpriteRenderer; // 地圖的 SpriteRenderer

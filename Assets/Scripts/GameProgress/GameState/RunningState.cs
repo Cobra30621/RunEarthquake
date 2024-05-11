@@ -11,9 +11,6 @@ namespace GameProgress
 
         private const float TOTAL_TIME = 10f;
 
-        [SerializeField] private float baseSpeed = 5;
-        [SerializeField] private float addSpeed = 1f;
-
         public override StateType GetStateType()
         {
             return StateType.Running;
@@ -29,13 +26,15 @@ namespace GameProgress
         {
             yield return TextDisplay.Instance.ShowText(
                 $"第 {_gameContext.CurrentPhase} 波地震來了", 1f);
-            
-            _gameContext.MapHandler.SetSpeed(baseSpeed + addSpeed * _gameContext.CurrentPhase);
+
+            float speed = _gameContext.RunningSpeed;
+            _gameContext.MapHandler.SetSpeed(speed);
             
             _timer.StartCountdown(TOTAL_TIME);
             while (!_timer.Finished)
             {
-                yield return new WaitForSeconds(1);
+                var interval = _gameContext.SpawnInterval / speed;
+                yield return new WaitForSeconds( interval);
                 Debug.Log("產生障礙物");
                 _gameContext.MapHandler.RandomSpawnObstacle();
             }

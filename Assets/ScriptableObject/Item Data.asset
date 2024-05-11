@@ -33,17 +33,17 @@ MonoBehaviour:
     description: "\u56DE\u8840"
     sprite: {fileID: -1903576312, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 948805bf068296547ad577ebb72ee0be, type: 3}
-  - itemType: 0
+  - itemType: 1
     title: "\u6CE1\u9EB5"
     description: "\u56DE\u8840"
     sprite: {fileID: 1577659063, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: e7caf056277ecf6419a29ab6118045e2, type: 3}
-  - itemType: 0
+  - itemType: 3
     title: "\u624B\u96FB\u7B52"
     description: "\u6E1B\u901F"
     sprite: {fileID: -128365146, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: e960bc06eac825045a92e4a3bd5bd730, type: 3}
-  - itemType: 0
+  - itemType: 3
     title: "\u6536\u97F3\u6A5F"
     description: "\u6E1B\u901F"
     sprite: {fileID: 474914971, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
@@ -56,20 +56,20 @@ MonoBehaviour:
   - itemType: 5
     title: "\u624B\u6A5F"
     description: "\u7121\u6CD5\u64CD\u4F5C"
-    sprite: {fileID: 0}
+    sprite: {fileID: -346965830, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 8c4134dcca0d44990bdf68294a2374ba, type: 3}
   - itemType: 6
     title: "\u6587\u4EF6\u593E"
     description: "\u6539\u8B8A\u6309\u9375"
-    sprite: {fileID: 0}
+    sprite: {fileID: 1230624800, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 8c4134dcca0d44990bdf68294a2374ba, type: 3}
   - itemType: 7
     title: "\u7834\u6389\u7684\u624B\u96FB\u7B52"
     description: "\u7E2E\u8996\u89D2"
-    sprite: {fileID: 0}
+    sprite: {fileID: 93514168, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 8c4134dcca0d44990bdf68294a2374ba, type: 3}
   - itemType: 7
     title: "\u7834\u6389\u7684\u6536\u97F3\u6A5F"
     description: "\u7E2E\u8996\u89D2(\u66AB\u5B9A)"
-    sprite: {fileID: 0}
+    sprite: {fileID: 1581698601, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 8c4134dcca0d44990bdf68294a2374ba, type: 3}
