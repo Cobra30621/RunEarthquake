@@ -109,7 +109,7 @@ namespace Map
 
         [Button("改變速度")]
         // 改變所有 MapObject 的速度
-        public void ChangeSpeed(float newSpeed)
+        public void SetSpeed(float newSpeed)
         {
             var mapObjects = MapHelper.FindAllMapObject();
             foreach (var mapObject in mapObjects)

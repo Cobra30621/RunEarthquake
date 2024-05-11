@@ -32,7 +32,7 @@ namespace GameProgress
 
         private IEnumerator PrepareCoroutine()
         {
-            _gameContext.MapHandler.ChangeSpeed(baseSpeed);
+            _gameContext.MapHandler.SetSpeed(baseSpeed);
             yield return TextDisplay.Instance.ShowText("準備階段", 1f);
             
             

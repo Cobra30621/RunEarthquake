@@ -10,6 +10,11 @@ namespace Map
         {
             PlayerStatus.Instance.TakeDamage(1);
             
+            DestroyObject();
+        }
+
+        public void DestroyObject()
+        {
             Destroy(gameObject);
         }
     }

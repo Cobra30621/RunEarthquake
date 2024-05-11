@@ -1,5 +1,6 @@
 using System.Linq;
 using Core;
+using Item;
 using Map;
 using Sirenix.OdinInspector;
 using UI;
@@ -14,7 +15,11 @@ namespace Player
         
         public ItemInfo[] items = new ItemInfo[4];
 
+        [SerializeField] private PlayerController _playerController;
         [SerializeField] private GainItemUI _gainItemUI;
+
+        [SerializeField] private KnifeEffect _knifeEffect;
+        [SerializeField] private MapHandler _mapHandler;
         
         [Button("獲得道具")]
         public void GainItem(ItemInfo info)
@@ -30,13 +35,34 @@ namespace Player
             OnItemChanged.Invoke(items);
         }
 
-        [Button("使用道具")]
         public void UseItem(int index)
         {
-            if (items[index] != null)
+            UseItem(items[index].itemType);
+            items[index] = new ItemInfo();
+            
+            OnItemChanged.Invoke(items);
+        }
+        
+        [Button("使用道具")]
+        
+        public void UseItem(ItemType itemType)
+        {
+            Debug.Log($"使用道具 {itemType}");
+
+            switch (itemType)
             {
-                Debug.Log($"使用道具 {items[index]}");
-                items[index].itemType = ItemType.None;
+                case ItemType.Food:
+                    PlayerStatus.Instance.Heal(1);
+                    break;
+                case ItemType.Hand:
+                    break;
+                case ItemType.Knife:
+                    var currentRow = _playerController.CurrentRow;
+                    var x = _mapHandler.GetSingleRow(currentRow).position.x;
+                    _knifeEffect.ShowKnife(x);
+                    break;
+                case ItemType.Light:
+                    break;
             }
             
             OnItemChanged.Invoke(items);

@@ -30,7 +30,7 @@ namespace GameProgress
             yield return TextDisplay.Instance.ShowText(
                 $"第 {_gameContext.CurrentPhase} 波地震來了", 1f);
             
-            _gameContext.MapHandler.ChangeSpeed(baseSpeed + addSpeed * _gameContext.CurrentPhase);
+            _gameContext.MapHandler.SetSpeed(baseSpeed + addSpeed * _gameContext.CurrentPhase);
             
             _timer.StartCountdown(TOTAL_TIME);
             while (!_timer.Finished)

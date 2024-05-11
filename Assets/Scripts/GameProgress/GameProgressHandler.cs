@@ -29,6 +29,11 @@ namespace GameProgress
             _stateCoroutine = StartCoroutine(enumerator);
         }
 
+        public void TriggerPause()
+        {
+            PauseGame(!isPaused);
+        }
+        
         [Button("暫停遊戲")]
         public void PauseGame(bool pause)
         {
