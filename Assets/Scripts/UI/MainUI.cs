@@ -26,7 +26,7 @@ namespace UI
         private void UpdateUI()
         {
             phase.text = _gameProgressHandler.CurrentStateType == StateType.Preparing ? "準備階段" : "地震中";
-            phaseCount.text = $"你已撐過第 {_gameProgressHandler.phaseCount} 波地震";
+            phaseCount.text = $"你已撐過第 {_gameProgressHandler.CurrentPhase} 波地震";
             
         }
 

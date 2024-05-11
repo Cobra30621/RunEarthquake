@@ -13,9 +13,9 @@ namespace GameProgress
         public bool IsPaused => isPaused;
         [SerializeField] private bool isPaused;
 
-        private Coroutine stateCoroutine;
+        private Coroutine _stateCoroutine;
 
-        public int phaseCount;
+        private int _phase;
 
         public StateType CurrentStateType => _gameState.GetStateType();
 
@@ -25,7 +25,7 @@ namespace GameProgress
 
         public void RunCoroutine(IEnumerator enumerator)
         {
-            stateCoroutine = StartCoroutine(enumerator);
+            _stateCoroutine = StartCoroutine(enumerator);
         }
 
         [Button("暫停遊戲")]
@@ -51,10 +51,10 @@ namespace GameProgress
         public void StartGame()
         {
             _mapHandler.StartGame();
-            phaseCount = 1;
+            _phase = 1;
             PlayerStatus.Instance.Init();
             
-            SetGameState(new PreparingState());
+            SetGameState(new PreparingState(true));
         }
 
         private void Update()
@@ -65,13 +65,15 @@ namespace GameProgress
 
         public void SetNextPhaseCount()
         {
-            phaseCount++;
+            _phase++;
         }
-        
+
+        public int CurrentPhase => _phase;
+
         public void SetGameState(GameState newState)
         {
-            if(stateCoroutine != null)
-                StopCoroutine(stateCoroutine);
+            if(_stateCoroutine != null)
+                StopCoroutine(_stateCoroutine);
             
             Debug.Log($"SetGameState: {newState.GetStateType()}");
             _gameState = newState;

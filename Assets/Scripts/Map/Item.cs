@@ -19,7 +19,8 @@ namespace Map
         {
             Debug.Log("獲得道具");
             
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            MapHelper.DestroyAllItems();
         }
     }
 }

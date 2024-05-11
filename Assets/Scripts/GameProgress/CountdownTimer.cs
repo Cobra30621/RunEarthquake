@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class CountdownTimer 
+public class CountdownTimer
 {
-    private float countdownTime; // 倒數計時的時間
+    private float countdownTime = 1; // 倒數計時的時間
     private bool isRunning = false; // 是否正在倒數計時
 
     public bool Finished => countdownTime <= 0;

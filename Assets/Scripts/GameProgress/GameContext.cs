@@ -17,6 +17,8 @@ namespace GameProgress
         MapHandler MapHandler { get;  }
 
         void SetNextPhaseCount();
+        
+        int CurrentPhase { get; }
 
     }
 }

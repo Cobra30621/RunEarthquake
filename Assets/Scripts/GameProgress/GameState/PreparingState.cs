@@ -1,11 +1,24 @@
 using System.Collections;
 using Map;
+using UI;
 using UnityEngine;
 
 namespace GameProgress
 {
     public class PreparingState : GameState
     {
+        private int START_SPAWN_COUNT = 3;
+        private int SPAWN_COUNT = 1;
+
+        private bool _isFirstPhase;
+
+        private float baseSpeed = 4;
+
+        public PreparingState(bool isFirstPhase = false)
+        {
+            _isFirstPhase = isFirstPhase;
+        }
+        
         public override StateType GetStateType()
         {
             return StateType.Preparing;
@@ -19,13 +32,20 @@ namespace GameProgress
 
         private IEnumerator PrepareCoroutine()
         {
-
-            for (int i = 0; i < 3; i++)
+            _gameContext.MapHandler.ChangeSpeed(baseSpeed);
+            yield return TextDisplay.Instance.ShowText("準備階段", 1f);
+            
+            
+            var spawnCount = _isFirstPhase ? START_SPAWN_COUNT:SPAWN_COUNT;
+            for (int i = 0; i < spawnCount; i++)
             {
-                yield return new WaitForSeconds(1);
-                _gameContext.MapHandler.RandomSpawnItem();
+                _gameContext.MapHandler.SpawnItem(0);
+                _gameContext.MapHandler.SpawnItem(2);
+                yield return new WaitForSeconds(3);
                 Debug.Log("產生道具");
             }
+
+            yield return new WaitForSeconds(2f);
             
             _gameContext.SetGameState(new RunningState());
         }

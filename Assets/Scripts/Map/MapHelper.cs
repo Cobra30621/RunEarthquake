@@ -22,5 +22,14 @@ namespace Map
             
         }
 
+        public static void DestroyAllItems()
+        {
+            var items = Object.FindObjectsOfType<Item>().ToList();
+            foreach (var item in items)
+            {
+                Object.Destroy(item.gameObject);
+            }
+        }
+
     }
 }
