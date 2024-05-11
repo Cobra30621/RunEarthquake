@@ -1,8 +1,12 @@
+using System;
+using Player;
+using Sirenix.OdinInspector;
+
 namespace Map
 {
     using UnityEngine;
 
-    public class MapObject : MonoBehaviour
+    public abstract class MapObject : MonoBehaviour
     {
         private float moveSpeed = 1.0f; // MapObject 的移動速度
 
@@ -22,6 +26,15 @@ namespace Map
                 Destroy(gameObject);
             }
         }
-    }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                OnPlayerEnter();
+            }
+        }
+        
+        protected abstract void OnPlayerEnter();
+    }
 }
