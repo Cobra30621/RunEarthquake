@@ -17,5 +17,5 @@ MonoBehaviour:
     description: "\u62C6\u9664\u524D\u65B9\u6574\u6392\u7684\u969C\u7919\u7269"
     prefab: {fileID: 3929823284751551470, guid: 0a54031c2969d473899e604c9681706c, type: 3}
   - title: "\u6C34"
-    description: 
-    prefab: {fileID: 0}
+    description: "\u56DE\u8840"
+    prefab: {fileID: 3929823284751551470, guid: 2ad3d50f2db924b3d818291ee6b3b079, type: 3}
