@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d71868e66a409ab522edadc455416d, type: 3}
   m_Name: Obstacle Data
   m_EditorClassIdentifier: 
-  SingleObstacles: []
-  TwiceObstacles: []
+  SingleObstacles:
+  - {fileID: 2494347623759278180, guid: 2286ccf6cbf62491082f127ab8864936, type: 3}
+  - {fileID: 2494347623759278180, guid: 8ad4c84106de746dea7e26c586f3ae76, type: 3}
+  TwiceObstacles:
+  - {fileID: 2494347623759278180, guid: d0d1f625e5a0d4109a4437e5892c7e77, type: 3}

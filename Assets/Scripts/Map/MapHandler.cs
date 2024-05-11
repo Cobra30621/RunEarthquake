@@ -1,3 +1,4 @@
+using Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Map
     using UnityEngine;
     using System.Collections.Generic;
 
-    public class MapHandler : SerializedMonoBehaviour
+    public class MapHandler : SingletonWithSerialized<MapHandler>
     {
         [InlineEditor]
         [SerializeField] private ObstacleData _obstacleData;
@@ -20,10 +21,6 @@ namespace Map
 
         public float scrollSpeed;
         
-        
-        
-        [SerializeField] private List<List<MapObject>> mapObjects; // 二維 List 用於管理 MapObject
-
         [SerializeField] private MapScroller mapScroller;
 
         [SerializeField] private List<Transform> singleSpawns;
@@ -37,14 +34,6 @@ namespace Map
 
         public void StartGame()
         {
-            // 初始化 mapObjects
-            mapObjects = new List<List<MapObject>>();
-
-            for (int i = 0; i < numRows; i++)
-            {
-                mapObjects.Add(new List<MapObject>());
-            }
-
             mapScroller.scrollSpeed = scrollSpeed;
             
             // 開始定期產生 MapObject
@@ -71,9 +60,8 @@ namespace Map
             Item item = Instantiate(itemInfo.prefab, spawnPosition);
             item.SetSpeed(scrollSpeed);
             item.SetItemInfo(itemInfo);
+            item.SetRow(new int[]{row});
             
-            // 將 MapObject 加入到對應的 List 中
-            mapObjects[row].Add(item);
         }
 
 
@@ -103,9 +91,8 @@ namespace Map
             
             var newObstacle = Instantiate(prefab, spawnPosition);
             newObstacle.SetSpeed(scrollSpeed);
+            newObstacle.SetRow(new int[]{row, row + 1});
             
-            mapObjects[row].Add(newObstacle);
-            mapObjects[row + 1].Add(newObstacle);
         }
         
         /// <summary>
@@ -119,8 +106,8 @@ namespace Map
             
             var newObstacle = Instantiate(prefab, spawnPosition);
             newObstacle.SetSpeed(scrollSpeed);
+            newObstacle.SetRow(new int[]{row});
             
-            mapObjects[row].Add(newObstacle);
         }
         
 
@@ -130,26 +117,39 @@ namespace Map
         // 改變所有 MapObject 的速度
         public void ChangeSpeed(float newSpeed)
         {
-            foreach (List<MapObject> rowObjects in mapObjects)
+            var mapObjects = MapHelper.FindAllMapObject();
+            foreach (var mapObject in mapObjects)
             {
-                foreach (MapObject mapObject in rowObjects)
-                {
-                    mapObject.SetSpeed(newSpeed);
-                }
+                mapObject.SetSpeed(newSpeed);
             }
 
             mapScroller.scrollSpeed = newSpeed;
         }
 
+        [Button("刪除指定的行")]
         // 刪除指定行數的所有 MapObject
         public void RemoveObjectsInRow(int row)
         {
-            foreach (MapObject mapObject in mapObjects[row])
+            var mapObjects = MapHelper.FindMapObjectWithRow(row);
+            foreach (MapObject mapObject in mapObjects)
             {
                 Destroy(mapObject.gameObject);
             }
+        }
 
-            mapObjects[row].Clear();
+        [Button("刪除所有物件")]
+        public void RemoveAllObject()
+        {
+            var mapObjects = MapHelper.FindAllMapObject();
+            foreach (var mapObject in mapObjects)
+            {
+                Destroy(mapObject.gameObject);
+            }
+        }
+
+        public Transform GetSingleRow(int row)
+        {
+            return singleSpawns[row];
         }
     }
     
