@@ -1,4 +1,5 @@
 using System.Collections;
+using Map;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -34,6 +35,10 @@ namespace GameProgress
             }
         }
 
+        public MapHandler MapHandler => _mapHandler;
+
+        [SerializeField] private MapHandler _mapHandler;
+
         private void Start()
         {
             StartGame();
@@ -42,6 +47,7 @@ namespace GameProgress
         [Button("開始遊戲")]
         public void StartGame()
         {
+            _mapHandler.StartGame();
             SetGameState(new PreparingState());
         }
 
@@ -53,6 +59,8 @@ namespace GameProgress
 
         public void SetGameState(GameState newState)
         {
+            if(stateCoroutine != null)
+                StopCoroutine(stateCoroutine);
             Debug.Log($"SetGameState: {newState.GetStateType()}");
             _gameState = newState;
             newState.Init(this);

@@ -25,25 +25,19 @@ namespace Map
 
         [SerializeField] private List<Transform> singleSpawns;
         [SerializeField] private List<Transform> twiceSpawns;
-
-        void Start()
-        {
-            StartGame();
-            
-        }
-
+        
         public void StartGame()
         {
             mapScroller.scrollSpeed = scrollSpeed;
             
             // 開始定期產生 MapObject
-            InvokeRepeating("RandomSpawnItem", spawnInterval, spawnInterval);
+            // InvokeRepeating("RandomSpawnItem", spawnInterval, spawnInterval);
         }
 
         #region 產生物件
 
         [Button("隨機產生道具")]
-        void RandomSpawnItem()
+        public void RandomSpawnItem()
         {
             // 隨機選擇一個行數產生 MapObject
             int randomRow = Random.Range(0, numRows);

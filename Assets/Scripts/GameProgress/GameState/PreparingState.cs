@@ -1,4 +1,5 @@
 using System.Collections;
+using Map;
 using UnityEngine;
 
 namespace GameProgress
@@ -22,6 +23,7 @@ namespace GameProgress
             for (int i = 0; i < 3; i++)
             {
                 yield return new WaitForSeconds(1);
+                _gameContext.MapHandler.RandomSpawnItem();
                 Debug.Log("產生道具");
             }
             

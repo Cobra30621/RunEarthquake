@@ -1,5 +1,6 @@
 
 using System.Collections;
+using Map;
 
 namespace GameProgress
 {
@@ -12,6 +13,8 @@ namespace GameProgress
         StateType CurrentStateType { get; }
         
         void PauseGame(bool pause);
+        
+        MapHandler MapHandler { get;  }
   
     }
 }

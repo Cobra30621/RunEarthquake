@@ -9,7 +9,7 @@ namespace Player
 
         public int score;
         
-        public static UnityEvent<int> OnHealthChanged;
+        public static UnityEvent<int> OnHealthChanged = new UnityEvent<int>();
         
         private static PlayerStatus _instance;
         public static PlayerStatus Instance

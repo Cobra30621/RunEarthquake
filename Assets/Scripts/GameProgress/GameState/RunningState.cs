@@ -6,6 +6,10 @@ namespace GameProgress
 {
     public class RunningState : GameState
     {
+        [SerializeField] private CountdownTimer _timer = new CountdownTimer();
+
+        public float TOTAL_TIME = 10f;
+        
         public override StateType GetStateType()
         {
             return StateType.Running;
@@ -19,18 +23,25 @@ namespace GameProgress
         
         private IEnumerator SpawningCoroutine()
         {
-            for (int i = 0; i < 10; i++)
+            _timer.StartCountdown(TOTAL_TIME);
+            while (true)
             {
                 yield return new WaitForSeconds(1);
                 Debug.Log("產生障礙物");
+                _gameContext.MapHandler.RandomSpawnObstacle();
             }
             
-            _gameContext.SetGameState(new PreparingState());
+            
         }
         
         public override void Update()
         {
-            
+            _timer.Update();
+
+            if (_timer.Finished)
+            {
+                _gameContext.SetGameState(new PreparingState());
+            }
         }
     }
 }

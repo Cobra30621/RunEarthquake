@@ -24,11 +24,6 @@ namespace Core
                                        $"yet its method is being called. Please add {typeof(T)} to the scene.");
                         instance = new GameObject(typeof(T).Name).AddComponent<T>();
                     }
-                    else
-                    {
-                        // If instance is found, ensure it persists across scene changes.
-                        DontDestroyOnLoad(instance);
-                    }
                 }
                 return instance;
             }
@@ -41,7 +36,6 @@ namespace Core
             if (instance == null)
             {
                 instance = this as T;
-                DontDestroyOnLoad(gameObject);
                 Initialize(); // Customizable method called at Awake.
             }
             else

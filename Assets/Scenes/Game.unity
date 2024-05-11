@@ -592,6 +592,7 @@ MonoBehaviour:
       Entry: 6
       Data: 
   isPaused: 0
+  _mapHandler: {fileID: 1230069644}
 --- !u!4 &1211989145
 Transform:
   m_ObjectHideFlags: 0
@@ -662,10 +663,7 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: mapObjects
-      Entry: 6
-      Data: 
+    SerializationNodes: []
   _obstacleData: {fileID: 11400000, guid: 6b158753d76244e9082ad412b246d9e4, type: 2}
   _itemData: {fileID: 11400000, guid: eb0133b7a2d9f46f1a9a4696017f5329, type: 2}
   mapObjectPrefab: {fileID: 4360263131287750975, guid: dc71c7d9f26f9445fa3fed9d4dc2d0e1, type: 3}
