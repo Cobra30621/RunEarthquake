@@ -33,6 +33,7 @@ namespace Player
 
         public void TakeDamage(int damage)
         {
+            AudioManager.Instance.PlaySE(SE.GetHit);
             SetHealth(health - damage);
         }
 

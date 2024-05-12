@@ -24,6 +24,7 @@ namespace GameProgress
         
         private IEnumerator SpawningCoroutine()
         {
+            AudioManager.Instance.PlaySE(SE.Earthquake);
             yield return TextDisplay.Instance.ShowText(
                 $"第 {_gameContext.CurrentPhase} 波地震來了", 1f);
 

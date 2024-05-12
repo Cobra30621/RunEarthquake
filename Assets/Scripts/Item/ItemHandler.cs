@@ -31,6 +31,7 @@ namespace Player
         [Button("獲得道具")]
         public void GainItem(ItemInfo info)
         {
+            AudioManager.Instance.PlaySE(SE.GainItem);
             var index = items.ToList().FindIndex(item => item.itemType == ItemType.None);
             
             if (index != -1)

@@ -90,6 +90,7 @@ namespace GameProgress
 
         private IEnumerator GameOverCoroutine()
         {
+            AudioManager.Instance.PlaySE(SE.BuildingDown);
             MapHandler.Instance.SetSpeed(0);
             PlayerController.SetCanMove(false);
             yield return new WaitForSeconds(1f);
