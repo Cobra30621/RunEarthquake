@@ -11,7 +11,11 @@ public enum SE
     Gloves,
     SNS,
     DeadLineJob,
-    BrokenThing
+    BrokenThing,
+    GainItem,
+    GetHit,
+    Earthquake,
+    BuildingDown
     
 }
     
