@@ -33,12 +33,24 @@ PrefabInstance:
       value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 5623576440117852829, guid: dc71c7d9f26f9445fa3fed9d4dc2d0e1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623576440117852829, guid: dc71c7d9f26f9445fa3fed9d4dc2d0e1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623576440117852829, guid: dc71c7d9f26f9445fa3fed9d4dc2d0e1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623576440117852829, guid: dc71c7d9f26f9445fa3fed9d4dc2d0e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.005
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 5623576440117852829, guid: dc71c7d9f26f9445fa3fed9d4dc2d0e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.252
+      value: -0.468
       objectReference: {fileID: 0}
     - target: {fileID: 8397582450370671833, guid: dc71c7d9f26f9445fa3fed9d4dc2d0e1, type: 3}
       propertyPath: m_LocalPosition.x

@@ -63,7 +63,7 @@ MonoBehaviour:
     useSE: 4
   - itemType: 5
     title: "\u624B\u6A5F"
-    description: "\u5730\u9707\u8A92: )"
+    description: "\u5730\u9707\u6587\uFF0C\u555F\u52D5: )"
     sprite: {fileID: -346965830, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 8c4134dcca0d44990bdf68294a2374ba, type: 3}
     useSE: 5
