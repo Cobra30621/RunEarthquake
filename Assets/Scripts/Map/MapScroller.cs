@@ -4,7 +4,6 @@ namespace Map
 
     public class MapScroller : MonoBehaviour
     {
-        public float scrollSpeed; // 地圖滑動的速度
         public float mapHeight = 10.0f; // 地圖的高度，用於循環滑動
 
         [SerializeField] private SpriteRenderer mapSpriteRenderer; // 地圖的 SpriteRenderer
@@ -21,6 +20,7 @@ namespace Map
 
         void Update()
         {
+            var scrollSpeed = MapHandler.Instance.ScrollSpeed;
             // 讓兩張地圖持續向下滑動
             map1.Translate(Vector3.down * scrollSpeed * Time.deltaTime);
             map2.Translate(Vector3.down * scrollSpeed * Time.deltaTime);

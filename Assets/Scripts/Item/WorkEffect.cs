@@ -10,7 +10,7 @@ namespace Item
         [SerializeField] private Sprite leftSprite, rightSprite;
         
 
-        public void Show()
+        public void Use()
         {
             StartCoroutine(ShowCoroutine());
         }
@@ -18,9 +18,9 @@ namespace Item
         IEnumerator ShowCoroutine()
         {
             _speakingDisplay.Show(leftSprite, rightSprite);
-            PlayerController.SetReserveMove(false);
-            yield return new WaitForSeconds(10f);
             PlayerController.SetReserveMove(true);
+            yield return new WaitForSeconds(10f);
+            PlayerController.SetReserveMove(false);
             _speakingDisplay.Close();
         }
     }

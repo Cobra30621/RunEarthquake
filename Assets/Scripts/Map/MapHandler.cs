@@ -19,6 +19,13 @@ namespace Map
         public int numRows = 3; // 地圖的行數
 
         private float scrollSpeed;
+
+        public float ScrollSpeed =>  _slowDown ? scrollSpeed * 0.5f : scrollSpeed;
+
+        public bool SlowDown => _slowDown;
+        [LabelText("緩速中")]
+        [SerializeField]
+        private bool _slowDown;
         
         [SerializeField] private MapScroller mapScroller;
 
@@ -27,7 +34,7 @@ namespace Map
         
         public void StartGame()
         {
-            mapScroller.scrollSpeed = scrollSpeed;
+            _slowDown = false;
         }
 
         #region 產生物件
@@ -48,7 +55,6 @@ namespace Map
             // 產生 MapObject
             var spawnPosition = singleSpawns[row];
             Item item = Instantiate(itemInfo.prefab, spawnPosition);
-            item.SetSpeed(scrollSpeed);
             item.SetItemInfo(itemInfo);
             item.SetRow(new int[]{row});
             
@@ -80,7 +86,6 @@ namespace Map
             var prefab = _obstacleData.GetRandomTwiceObstacle();
             
             var newObstacle = Instantiate(prefab, spawnPosition);
-            newObstacle.SetSpeed(scrollSpeed);
             newObstacle.SetRow(new int[]{row, row + 1});
             
         }
@@ -95,7 +100,6 @@ namespace Map
             var prefab = _obstacleData.GetRandomObstacle();
             
             var newObstacle = Instantiate(prefab, spawnPosition);
-            newObstacle.SetSpeed(scrollSpeed);
             newObstacle.SetRow(new int[]{row});
             
         }
@@ -105,17 +109,21 @@ namespace Map
 
         [Button("改變速度")]
         // 改變所有 MapObject 的速度
+
+        #region Speed
+
         public void SetSpeed(float newSpeed)
         {
             scrollSpeed = newSpeed;
-            var mapObjects = MapHelper.FindAllMapObject();
-            foreach (var mapObject in mapObjects)
-            {
-                mapObject.SetSpeed(newSpeed);
-            }
-
-            mapScroller.scrollSpeed = newSpeed;
+   
         }
+
+        public void SetSlowDown(bool slowDown)
+        {
+            _slowDown = slowDown;
+        }
+
+        #endregion
 
         [Button("刪除指定的行")]
         // 刪除指定行數的所有 MapObject

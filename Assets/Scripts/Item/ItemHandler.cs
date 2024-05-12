@@ -24,6 +24,8 @@ namespace Player
 
         [SerializeField] private SNSEffect _snsEffect;
         [SerializeField] private WorkEffect _deadlineJobEffect;
+        [SerializeField] private LightEffect lightEffect;
+        [SerializeField] private BrokenLightEffect _brokenLightEffect;
         
         
         [Button("獲得道具")]
@@ -48,7 +50,7 @@ namespace Player
                 return;
             }
             
-            AudioManager.Instance.PlaySE(items[index].useSE);
+            // AudioManager.Instance.PlaySE(items[index].useSE);
             UseItem(itemType);
             items[index] = new ItemInfo();
             
@@ -74,12 +76,16 @@ namespace Player
                     _knifeEffect.ShowKnife(x);
                     break;
                 case ItemType.Light:
+                    lightEffect.Use();
                     break;
                 case ItemType.SNS:
-                    _snsEffect.Show();
+                    _snsEffect.Use();
                     break;
                 case ItemType.DeadlineJob:
-                    _deadlineJobEffect.Show();
+                    _deadlineJobEffect.Use();
+                    break;
+                case ItemType.BrokenLight:
+                    _brokenLightEffect.Use();
                     break;
             }
             

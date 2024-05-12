@@ -9,7 +9,7 @@ namespace Item
         [SerializeField] private SpeakingDisplay _speakingDisplay;
         [SerializeField] private Sprite leftSprite, rightSprite;
 
-        public void Show()
+        public void Use()
         {
             StartCoroutine(ShowCoroutine());
         }

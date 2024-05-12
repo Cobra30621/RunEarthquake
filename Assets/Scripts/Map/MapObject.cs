@@ -16,15 +16,12 @@ namespace Map
         {
             Rows = rows;
         }
-        
-        public void SetSpeed(float speed)
-        {
-            moveSpeed = speed;
-        }
+     
         
         void Update()
         {
             // 持續向下移動
+            moveSpeed = MapHandler.Instance.ScrollSpeed;
             transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
 
             // 如果 MapObject 移出畫面下方，則刪除它
