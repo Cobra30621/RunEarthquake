@@ -1,3 +1,4 @@
+using System.Collections;
 using Core;
 using GameProgress;
 using Map;
@@ -11,18 +12,14 @@ namespace UI
     public class GainItemUI : MonoBehaviour
     {
         [SerializeField]
+        private GameObject mainPanel;
+        [SerializeField]
         private TextMeshProUGUI ItemTitle, ItemDiscription;
         [SerializeField]
         private Image Icon;
-        public ItemInfo test;
-        [Button("測試 UI")]
-        public void ShowUI()
-        {
-            ShowUI(test);
-        }
 
-
-
+        [LabelText("顯示時間")]
+        public float displayInterval = 2f;
 
         [Button("顯示 UI")]
         public void ShowUI(ItemInfo info)
@@ -30,6 +27,15 @@ namespace UI
             ItemTitle.text = info.title;
             ItemDiscription.text = info.description;
             Icon.sprite = info.sprite;
+
+            StartCoroutine(ShowCoroutine());
+        }
+
+        IEnumerator ShowCoroutine()
+        {
+            mainPanel.SetActive(true);
+            yield return new WaitForSeconds(displayInterval);
+            mainPanel.SetActive(false);
         }
         
     }

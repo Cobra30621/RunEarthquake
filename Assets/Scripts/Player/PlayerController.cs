@@ -1,3 +1,4 @@
+using System;
 using GameProgress;
 using Map;
 using Sirenix.OdinInspector;
@@ -17,10 +18,16 @@ namespace Player
         public static int CurrentRow => currentRow;
 
         [LabelText("移動")]
-        public static bool CanMove;
+        public static bool CanMove = true;
         [LabelText("反向移動")]
-        public static bool ReserveMove;
- 
+        public static bool ReserveMove = false;
+
+        private void Start()
+        {
+            CanMove = true;
+            ReserveMove = false;
+        }
+
         void Update()
         {
             CheckSpeedUp();
@@ -78,6 +85,11 @@ namespace Player
 
         private void CheckMovement()
         {
+            if (!CanMove)
+            {
+                return;
+            }
+            
             int dir = ReserveMove ? -1 : 1;
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
@@ -110,10 +122,7 @@ namespace Player
 
         private void CheckSkillInput()
         {
-            if (!CanMove)
-            {
-                return;
-            }
+            
             
             if (Input.GetKeyDown(KeyCode.Q))
             {

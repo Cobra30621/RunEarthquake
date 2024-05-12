@@ -18,7 +18,6 @@ namespace Player
         [SerializeField] private GainItemUI _gainItemUI;
         
         [SerializeField] private MapHandler _mapHandler;
-        [SerializeField] private PlayerController _playerController;
         
         [Title("道具效果")]
         [SerializeField] private KnifeEffect _knifeEffect;
@@ -37,7 +36,7 @@ namespace Player
                 items[index] = new ItemInfo(info);
             }
             
-            _gainItemUI?.ShowUI(info);
+            _gainItemUI.ShowUI(info);
             OnItemChanged.Invoke(items);
         }
 
