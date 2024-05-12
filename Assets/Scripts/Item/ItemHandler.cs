@@ -20,7 +20,7 @@ namespace Player
         [SerializeField] private MapHandler _mapHandler;
         
         [Title("道具效果")]
-        [SerializeField] private KnifeEffect _knifeEffect;
+        [SerializeField] private ShootingEffect knifeEffect;
 
         [SerializeField] private SNSEffect _snsEffect;
         [SerializeField] private WorkEffect _deadlineJobEffect;
@@ -74,7 +74,7 @@ namespace Player
                 case ItemType.Knife:
                     var currentRow = PlayerController.CurrentRow;
                     var x = _mapHandler.GetSingleRow(currentRow).position.x;
-                    _knifeEffect.ShowKnife(x);
+                    knifeEffect.ShowKnife(x);
                     break;
                 case ItemType.Light:
                     lightEffect.Use();
