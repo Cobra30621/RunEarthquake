@@ -2474,21 +2474,25 @@ MonoBehaviour:
     description: 
     sprite: {fileID: 0}
     prefab: {fileID: 0}
+    useSE: 0
   - itemType: 0
     title: 
     description: 
     sprite: {fileID: 0}
     prefab: {fileID: 0}
+    useSE: 0
   - itemType: 0
     title: 
     description: 
     sprite: {fileID: 0}
     prefab: {fileID: 0}
+    useSE: 0
   - itemType: 0
     title: 
     description: 
     sprite: {fileID: 0}
     prefab: {fileID: 0}
+    useSE: 0
   _gainItemUI: {fileID: 327773339}
   _mapHandler: {fileID: 1230069644}
   _knifeEffect: {fileID: 35261156}
