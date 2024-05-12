@@ -15,7 +15,12 @@ MonoBehaviour:
   SingleObstacles:
   - {fileID: 2494347623759278180, guid: 2286ccf6cbf62491082f127ab8864936, type: 3}
   - {fileID: 2494347623759278180, guid: 8ad4c84106de746dea7e26c586f3ae76, type: 3}
+  - {fileID: 2494347623759278180, guid: 8c6c8e03f8d800d4c9319382b4af332d, type: 3}
+  - {fileID: 2494347623759278180, guid: 8c34883271d53c84ebd433828cb383e5, type: 3}
+  - {fileID: 2494347623759278180, guid: 3b907fddb34af1c4d97c92463e08bc67, type: 3}
+  - {fileID: 2494347623759278180, guid: f98835ee6cb90aa4e93c7d2ee15d4258, type: 3}
   TwiceObstacles:
   - {fileID: 2494347623759278180, guid: d0d1f625e5a0d4109a4437e5892c7e77, type: 3}
   - {fileID: 2494347623759278180, guid: 07fba6f95299646c18b10fb4ba2109a5, type: 3}
   - {fileID: 2494347623759278180, guid: 4e9aed3a98d504a1aa01bdc00c7a8f46, type: 3}
+  - {fileID: 2494347623759278180, guid: 0c00f91ad6bedba40b8d614315a25163, type: 3}
