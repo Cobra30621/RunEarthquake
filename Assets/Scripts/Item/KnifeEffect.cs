@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Item
 {
-    public class ShootingEffect : MonoBehaviour
+    public class KnifeEffect : MonoBehaviour
     {
         [SerializeField] private GameObject knifeCollider;
         [SerializeField] private Animator _animator;
 
-        public void ShowKnife(float x)
+        public void Use(float x)
         {
             var position = knifeCollider.transform.position;
             position = new Vector3(x, position.y, position.z);

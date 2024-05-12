@@ -1494,8 +1494,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600390877}
-  - component: {fileID: 600390879}
   - component: {fileID: 600390880}
+  - component: {fileID: 600390881}
   m_Layer: 0
   m_Name: Hand Effect
   m_TagString: Untagged
@@ -1512,27 +1512,13 @@ Transform:
   m_GameObject: {fileID: 600390876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.96, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1652646567}
   m_Father: {fileID: 1422101962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &600390879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600390876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749f34711d764f7db1cb5a1ac0db2016, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knifeCollider: {fileID: 1652646566}
-  _animator: {fileID: 600390880}
 --- !u!95 &600390880
 Animator:
   serializedVersion: 5
@@ -1554,6 +1540,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &600390881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600390876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe7b521b20b4c8cb938dae192f6ba95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifeCollider: {fileID: 1652646566}
+  _animator: {fileID: 600390880}
 --- !u!1 &604965058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,7 +2037,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.19995748}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2048,7 +2048,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.6000851}
   m_EdgeRadius: 0
 --- !u!114 &717279669
 MonoBehaviour:
@@ -2681,7 +2681,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 20
   m_Sprite: {fileID: 4068644, guid: e4e6b4c7227dc0c46aaeeceee5bb1beb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3117,6 +3117,7 @@ MonoBehaviour:
   _gainItemUI: {fileID: 327773339}
   _mapHandler: {fileID: 1230069644}
   knifeEffect: {fileID: 35261156}
+  handEffect: {fileID: 600390881}
   _snsEffect: {fileID: 1631149584}
   _deadlineJobEffect: {fileID: 1687463213}
   lightEffect: {fileID: 1077443151}
@@ -3492,7 +3493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1652646567
 Transform:
   m_ObjectHideFlags: 0
@@ -3502,7 +3503,7 @@ Transform:
   m_GameObject: {fileID: 1652646566}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8744, y: 1.0844, z: 0}
+  m_LocalPosition: {x: 0, y: 1.0844, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
