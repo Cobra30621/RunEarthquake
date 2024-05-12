@@ -29,6 +29,8 @@ namespace GameProgress
         public float BaseSpeed => _baseSpeed;
         public float RunningSpeed => _baseSpeed + _addSpeed * (CurrentPhase - 1);
         public float SpawnInterval => _spawnInterval;
+
+        [SerializeField] private GameObject pausePanel;
         
         [Title("參數")]
         [LabelText("基礎移動速度")]
@@ -72,6 +74,7 @@ namespace GameProgress
         [Button("暫停遊戲")]
         public void PauseGame(bool pause)
         {
+            pausePanel.SetActive(pause);
             isPaused = pause;
             if (pause)
             {

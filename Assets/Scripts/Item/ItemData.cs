@@ -38,6 +38,7 @@ namespace Map
             title = info.title;
             description = info.description;
             sprite = info.sprite;
+            useSE = info.useSE;
         }
     }
 }

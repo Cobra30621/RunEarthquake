@@ -51,6 +51,7 @@ namespace Player
                 return;
             }
             
+            Debug.Log($"SE: {items[index].useSE}");
             AudioManager.Instance.PlaySE(items[index].useSE);
             UseItem(itemType);
             items[index] = new ItemInfo();
