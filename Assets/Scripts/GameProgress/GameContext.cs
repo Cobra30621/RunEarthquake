@@ -1,6 +1,7 @@
 
 using System.Collections;
 using Map;
+using Player;
 
 namespace GameProgress
 {
@@ -15,10 +16,10 @@ namespace GameProgress
         void PauseGame(bool pause);
         
         MapHandler MapHandler { get;  }
+        CameraShake CameraShake { get; }
 
         void SetNextPhaseCount();
         
-        int CurrentPhase { get; }
         
         float BaseSpeed { get; }
         
