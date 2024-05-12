@@ -85,14 +85,14 @@ namespace GameProgress
         
         private void EndGame()
         {
-            PauseGame(true);
             StartCoroutine(GameOverCoroutine());
         }
 
         private IEnumerator GameOverCoroutine()
         {
+            MapHandler.Instance.SetSpeed(0);
+            PlayerController.SetCanMove(false);
             yield return new WaitForSeconds(1f);
-            PauseGame(false);
             SceneManager.LoadScene("end");
         }
 

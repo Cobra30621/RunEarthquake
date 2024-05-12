@@ -7,7 +7,7 @@ namespace Item
     public class WorkEffect : MonoBehaviour
     {
         [SerializeField] private SpeakingDisplay _speakingDisplay;
-        [SerializeField] private Sprite leftSprite, rightSprite;
+        [SerializeField] private Sprite [] leftSprites, rightSprites;
         
 
         public void Use()
@@ -17,7 +17,9 @@ namespace Item
 
         IEnumerator ShowCoroutine()
         {
-            _speakingDisplay.Show(leftSprite, rightSprite);
+            var index = Random.Range(0, leftSprites.Length);
+            
+            _speakingDisplay.Show(leftSprites[index], rightSprites[index]);
             PlayerController.SetReserveMove(true);
             yield return new WaitForSeconds(10f);
             PlayerController.SetReserveMove(false);
