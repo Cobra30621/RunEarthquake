@@ -12,7 +12,7 @@ public class EndUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Result.text = $"¼µ¹L¤F {GameProgressHandler.CurrentPhase} ªi¦a¾_";
+        Result.text = $"ä½ æ’éäº† {GameProgressHandler.CurrentPhase} æ³¢åœ°éœ‡";
     }
 
     // Update is called once per frame

@@ -2948,7 +2948,7 @@ MonoBehaviour:
   cameraShake: {fileID: 519420033}
   pausePanel: {fileID: 1616835532}
   _baseSpeed: 4
-  _addSpeed: 2
+  _addSpeed: 4
   _spawnInterval: 8
 --- !u!4 &1211989145
 Transform:

@@ -32,7 +32,7 @@ namespace GameProgress
 
         public static int CurrentPhase => _phase;
         public float BaseSpeed => _baseSpeed;
-        public float RunningSpeed => _baseSpeed + _addSpeed * (CurrentPhase - 1);
+        public float RunningSpeed => _baseSpeed + _addSpeed * (CurrentPhase);
         public float SpawnInterval => _spawnInterval;
 
         [SerializeField] private GameObject pausePanel;
