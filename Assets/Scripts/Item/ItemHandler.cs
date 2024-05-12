@@ -16,9 +16,16 @@ namespace Player
         public ItemInfo[] items = new ItemInfo[4];
 
         [SerializeField] private GainItemUI _gainItemUI;
-
-        [SerializeField] private KnifeEffect _knifeEffect;
+        
         [SerializeField] private MapHandler _mapHandler;
+        [SerializeField] private PlayerController _playerController;
+        
+        [Title("道具效果")]
+        [SerializeField] private KnifeEffect _knifeEffect;
+
+        [SerializeField] private SNSEffect _snsEffect;
+        [SerializeField] private WorkEffect _deadlineJobEffect;
+        
         
         [Button("獲得道具")]
         public void GainItem(ItemInfo info)
@@ -61,6 +68,12 @@ namespace Player
                     _knifeEffect.ShowKnife(x);
                     break;
                 case ItemType.Light:
+                    break;
+                case ItemType.SNS:
+                    _snsEffect.Show();
+                    break;
+                case ItemType.DeadlineJob:
+                    _deadlineJobEffect.Show();
                     break;
             }
             

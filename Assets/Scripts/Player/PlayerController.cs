@@ -8,8 +8,6 @@ namespace Player
 {
     public class PlayerController : SerializedMonoBehaviour
     {
-       
-
         [SerializeField] private GameObject player;
 
         [SerializeField] private MapHandler _mapHandler;
@@ -17,15 +15,32 @@ namespace Player
 
         public static int currentRow = 1;
         public static int CurrentRow => currentRow;
-        
+
+        [LabelText("移動")]
+        public static bool CanMove;
+        [LabelText("反向移動")]
+        public static bool ReserveMove;
+ 
         void Update()
         {
             CheckSpeedUp();
             CheckRestart();
             CheckPause();
-            
+
+   
             CheckMovement();
             CheckSkillInput();
+            
+        }
+
+        public static void SetCanMove(bool canMove)
+        {
+            CanMove = canMove;
+        }
+
+        public static void SetReserveMove(bool reserveMove)
+        {
+            ReserveMove = reserveMove;
         }
 
 
@@ -63,13 +78,14 @@ namespace Player
 
         private void CheckMovement()
         {
+            int dir = ReserveMove ? -1 : 1;
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                UpdatePlayerRow(-1);
+                UpdatePlayerRow(-1 * dir);
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                UpdatePlayerRow(1);
+                UpdatePlayerRow(1 * dir);
             }
         }
 
@@ -94,6 +110,11 @@ namespace Player
 
         private void CheckSkillInput()
         {
+            if (!CanMove)
+            {
+                return;
+            }
+            
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 ItemHandler.Instance.UseItem(0);
