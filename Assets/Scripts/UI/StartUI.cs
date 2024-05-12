@@ -26,7 +26,7 @@ public class StartUI : MonoBehaviour
     public void ExplanGame()
     {
         
-        SceneManager.LoadScene("«öÁä»¡©ú");
+        SceneManager.LoadScene("Intro");
     }
     public void ExitGame()
     {
