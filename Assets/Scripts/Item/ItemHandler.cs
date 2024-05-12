@@ -50,7 +50,7 @@ namespace Player
                 return;
             }
             
-            // AudioManager.Instance.PlaySE(items[index].useSE);
+            AudioManager.Instance.PlaySE(items[index].useSE);
             UseItem(itemType);
             items[index] = new ItemInfo();
             

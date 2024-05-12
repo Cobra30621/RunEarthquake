@@ -13,7 +13,7 @@ public class LightEffect : MonoBehaviour
     private IEnumerator UseCoroutine()
     {
         MapHandler.Instance.SetSlowDown(true);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         MapHandler.Instance.SetSlowDown(false);
     }
 }
