@@ -2,6 +2,7 @@ using GameProgress;
 using Map;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -19,6 +20,8 @@ namespace Player
         
         void Update()
         {
+            CheckSpeedUp();
+            CheckRestart();
             CheckPause();
             
             CheckMovement();
@@ -26,6 +29,29 @@ namespace Player
         }
 
 
+        private void CheckRestart()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SceneManager.LoadScene("Game");
+            }
+        }
+
+        private void CheckSpeedUp()
+        {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                var speed = GameProgressHandler.Instance.RunningSpeed;
+                MapHandler.Instance.SetSpeed(speed - 2f);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                var speed = GameProgressHandler.Instance.RunningSpeed;
+                MapHandler.Instance.SetSpeed(speed + 2f);
+            }
+        }
+        
         private void CheckPause()
         {
             if (Input.GetKeyDown(KeyCode.Escape))

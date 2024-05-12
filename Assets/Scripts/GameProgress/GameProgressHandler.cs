@@ -1,4 +1,5 @@
 using System.Collections;
+using Core;
 using Map;
 using Player;
 using Sirenix.OdinInspector;
@@ -7,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 namespace GameProgress
 {
-    public class GameProgressHandler : SerializedMonoBehaviour, GameContext
+    public class GameProgressHandler : SingletonWithSerialized<GameProgressHandler>, GameContext
     {
         [SerializeField] private GameState _gameState;
 
@@ -91,6 +92,7 @@ namespace GameProgress
         private IEnumerator GameOverCoroutine()
         {
             yield return new WaitForSeconds(1f);
+            PauseGame(false);
             SceneManager.LoadScene("end");
         }
 

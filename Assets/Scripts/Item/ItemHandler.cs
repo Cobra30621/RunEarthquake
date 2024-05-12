@@ -73,6 +73,8 @@ namespace Player
             {
                  items[index].itemType = ItemType.None;
             }
+            
+            OnItemChanged.Invoke(items);
         }
         
     }

@@ -13,9 +13,14 @@ namespace UI
         [SerializeField] private GameProgressHandler _gameProgressHandler;
 
 
-        private void Start()
+        private void Awake()
         {
             PlayerStatus.OnHealthChanged.AddListener(UpdateHealth);
+        }
+
+        private void Start()
+        {
+            UpdateUI();
         }
 
         private void Update()

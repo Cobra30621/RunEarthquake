@@ -11,11 +11,11 @@ namespace UI
     {
         [SerializeField] private Image[] images = new Image [4];
 
-
-        private void Start()
+        private void Awake()
         {
             ItemHandler.OnItemChanged.AddListener(UpdateUI);
         }
+        
 
         private void UpdateUI(ItemInfo[] itemInfos)
         {
