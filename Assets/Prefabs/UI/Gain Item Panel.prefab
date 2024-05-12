@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391.00012, y: -41.814976}
+  m_AnchoredPosition: {x: 394.00012, y: -105.81497}
   m_SizeDelta: {x: 705.14, y: 49.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2117576221525910521
@@ -243,7 +243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: 9}
+  m_AnchoredPosition: {x: 394, y: -55}
   m_SizeDelta: {x: 400.87, y: 51.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8915346114710977592
@@ -479,12 +479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbeea1c7d9d4ef984d9ccc90e55ba00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainPanel: {fileID: 0}
   ItemTitle: {fileID: 8096524160740912215}
   ItemDiscription: {fileID: 3716532369430413120}
   Icon: {fileID: 3806294294815327065}
-  test:
-    itemType: 1
-    title: "\u6C34"
-    description: "\u4F7F\u7528\u5F8C\u56DE\u8840"
-    sprite: {fileID: -523959873, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
-    prefab: {fileID: 0}
+  displayInterval: 2

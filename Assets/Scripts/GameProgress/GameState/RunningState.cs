@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UI;
 using UnityEngine;
 
@@ -25,9 +26,10 @@ namespace GameProgress
         private IEnumerator SpawningCoroutine()
         {
             AudioManager.Instance.PlaySE(SE.Earthquake);
+            _gameContext.CameraShake.SetShake(true);
             yield return TextDisplay.Instance.ShowText(
-                $"第 {_gameContext.CurrentPhase} 波地震來了", 1f);
-
+                $"第 {GameProgressHandler.CurrentPhase} 波地震來了", 1f);
+            
             float speed = _gameContext.RunningSpeed;
             _gameContext.MapHandler.SetSpeed(speed);
             
@@ -40,6 +42,8 @@ namespace GameProgress
                 _gameContext.MapHandler.RandomSpawnObstacle();
             }
 
+            _gameContext.CameraShake.SetShake(false);
+            
             yield return new WaitForSeconds(3f);
             
             _gameContext.SetNextPhaseCount();

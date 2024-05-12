@@ -17,15 +17,20 @@ namespace GameProgress
 
         private Coroutine _stateCoroutine;
 
-        private int _phase;
+        private static int _phase;
 
         public StateType CurrentStateType => _gameState.GetStateType();
 
         public MapHandler MapHandler => _mapHandler;
+        public CameraShake CameraShake => cameraShake;
 
         [SerializeField] private MapHandler _mapHandler;
+        
+        [Required]
+        [SerializeField]
+        private CameraShake cameraShake;
 
-        public int CurrentPhase => _phase;
+        public static int CurrentPhase => _phase;
         public float BaseSpeed => _baseSpeed;
         public float RunningSpeed => _baseSpeed + _addSpeed * (CurrentPhase - 1);
         public float SpawnInterval => _spawnInterval;
