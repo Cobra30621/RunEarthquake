@@ -69,7 +69,7 @@ MonoBehaviour:
     useSE: 5
   - itemType: 6
     title: "\u6587\u4EF6\u593E"
-    description: "\u8CFA\u9322\uFF0C\u4E0D\u5BD2\u78E3"
+    description: "\u9322\u4E43\u91CD\u8981\u4E4B\u7269"
     sprite: {fileID: 1230624800, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 4b7cbf9abcf1cf7459ef6b88d33440c2, type: 3}
     useSE: 6
@@ -77,11 +77,11 @@ MonoBehaviour:
     title: "\u7834\u6389\u7684\u624B\u96FB\u7B52"
     description: "\u6709\u7E3D\u6BD4\u6C92\u6709\u597D"
     sprite: {fileID: 93514168, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
-    prefab: {fileID: 3929823284751551470, guid: e960bc06eac825045a92e4a3bd5bd730, type: 3}
+    prefab: {fileID: 3929823284751551470, guid: 4b06819378936fc42ace61849514cc89, type: 3}
     useSE: 7
   - itemType: 7
     title: "\u7834\u6389\u7684\u6536\u97F3\u6A5F"
     description: "\u6709\u7E3D\u6BD4\u6C92\u6709\u597D"
     sprite: {fileID: 1581698601, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
-    prefab: {fileID: 3929823284751551470, guid: 8b2ea7ec5bcfb704ab92b3b144df5f87, type: 3}
+    prefab: {fileID: 3929823284751551470, guid: 90eb1ab4a0b378e468e92f82e611a181, type: 3}
     useSE: 7

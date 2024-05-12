@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4360263131287750975, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_Name
-      value: Temp_Item 3
+      value: BrokenRadio
       objectReference: {fileID: 0}
     - target: {fileID: 7959667064187357442, guid: 2b39eb9c27ed7487bb1d5bd4f3522a57, type: 3}
       propertyPath: m_Sprite
