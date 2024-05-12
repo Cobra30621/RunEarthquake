@@ -5,21 +5,23 @@ namespace Item
 {
     public class KnifeEffect : MonoBehaviour
     {
-        [SerializeField] private GameObject knife;
+        [SerializeField] private GameObject knifeCollider;
+        [SerializeField] private Animator _animator;
 
         public void ShowKnife(float x)
         {
-            var position = knife.transform.position;
+            var position = knifeCollider.transform.position;
             position = new Vector3(x, position.y, position.z);
-            knife.transform.position = position;
+            knifeCollider.transform.position = position;
             StartCoroutine(Show());
         }
 
         IEnumerator Show()
         {
-            knife.SetActive(true);
-            yield return new WaitForSeconds(1f);
-            knife.SetActive(false);
+            _animator.SetTrigger("Show");
+            knifeCollider.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            knifeCollider.SetActive(false);
         }
     }
 }
