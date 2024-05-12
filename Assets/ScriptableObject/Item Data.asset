@@ -68,7 +68,7 @@ MonoBehaviour:
     prefab: {fileID: 3929823284751551470, guid: 8c4134dcca0d44990bdf68294a2374ba, type: 3}
     useSE: 5
   - itemType: 6
-    title: "\u6587\u4EF6\u593E"
+    title: "\u6B7B\u7DDA\u5728\u4ECA\u5929\u7684\u5DE5\u4F5C"
     description: "\u9322\u4E43\u91CD\u8981\u4E4B\u7269"
     sprite: {fileID: 1230624800, guid: b65dcce62df7686498bba8e42f2a772b, type: 3}
     prefab: {fileID: 3929823284751551470, guid: 4b7cbf9abcf1cf7459ef6b88d33440c2, type: 3}

@@ -59,7 +59,7 @@ namespace GameProgress
         public void StartGame()
         {
             _mapHandler.StartGame();
-            _phase = 1;
+            _phase = 0;
             PlayerStatus.Instance.Init();
             ItemHandler.Instance.InitItems();
             
