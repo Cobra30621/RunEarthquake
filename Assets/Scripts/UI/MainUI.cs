@@ -9,10 +9,10 @@ namespace UI
 {
     public class MainUI : SerializedMonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI phase, phaseCount, health;
+        [SerializeField] private TextMeshProUGUI phase, phaseCount;
         [SerializeField] private GameProgressHandler _gameProgressHandler;
 
-
+        [SerializeField] private HealthUI _healthUI;
         private void Awake()
         {
             PlayerStatus.OnHealthChanged.AddListener(UpdateHealth);
@@ -37,7 +37,7 @@ namespace UI
 
         private void UpdateHealth(int value)
         {
-            health.text = $"生命：{value}";
+            _healthUI.UpdateHealth(value);
         }
     }
 }
