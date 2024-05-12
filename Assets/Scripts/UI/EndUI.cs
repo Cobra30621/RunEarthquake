@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndUI : MonoBehaviour
 {
@@ -14,5 +15,13 @@ public class EndUI : MonoBehaviour
     void Update()
     {
         
+    }
+    public void BackToStart()
+    {
+        SceneManager.LoadScene("Start");
+    }
+    public void Retry()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
