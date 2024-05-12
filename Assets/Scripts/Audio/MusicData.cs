@@ -4,18 +4,15 @@ using UnityEngine;
 
 public enum SE
 {
-    Button,
-    Ghost,
+    EatFood,
     Dead,
-    ScaryLaugh,
-    Slap,
-    Spring,
-    Win,
-    Arrow,
-    Click1,
-    Click2,
-    Click3,
-    GetPoint,
+    Knife,
+    RadioLight,
+    Gloves,
+    SNS,
+    DeadLineJob,
+    BrokenThing
+    
 }
     
 public enum Bgm

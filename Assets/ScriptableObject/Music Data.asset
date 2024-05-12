@@ -17,6 +17,12 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8300000, guid: 4c310a301056d499cb01a878e5263e96, type: 3}
+    - {fileID: 8300000, guid: a928340095ce061409808aecb9cac79c, type: 3}
+    - {fileID: 8300000, guid: 07b3c18b1f27c3f49b3e2e2294e223fd, type: 3}
+    - {fileID: 8300000, guid: 572afd3a6b1807f40a11bdcf9f870a99, type: 3}
+    - {fileID: 8300000, guid: 6e5eca414cdfdaf458f49d46c4402f51, type: 3}
+    - {fileID: 8300000, guid: 1321c233392781644ac8ef6b4199a845, type: 3}
+    - {fileID: 8300000, guid: 764e0fcf57fcdc84e99bd897a34a0988, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -41,7 +47,55 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
       Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
       Data: 
@@ -50,7 +104,31 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 10
-      Data: 0
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -60,5 +138,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  titleBGM: {fileID: 0}
-  gameBGMs: []
+  titleBGM: {fileID: 8300000, guid: 064ff5a374ad83b4594f39fa2a774a3a, type: 3}
+  gameBGMs:
+  - {fileID: 8300000, guid: 064ff5a374ad83b4594f39fa2a774a3a, type: 3}
