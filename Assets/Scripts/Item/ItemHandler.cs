@@ -42,7 +42,14 @@ namespace Player
 
         public void UseItem(int index)
         {
-            UseItem(items[index].itemType);
+            var itemType = items[index].itemType;
+            if (itemType == ItemType.None)
+            {
+                return;
+            }
+            
+            AudioManager.Instance.PlaySE(items[index].useSE);
+            UseItem(itemType);
             items[index] = new ItemInfo();
             
             OnItemChanged.Invoke(items);
@@ -53,7 +60,7 @@ namespace Player
         public void UseItem(ItemType itemType)
         {
             Debug.Log($"使用道具 {itemType}");
-
+            
             switch (itemType)
             {
                 case ItemType.Food:

@@ -25,6 +25,8 @@ namespace Map
         public Sprite sprite;
         public Item prefab;
 
+        public SE useSE;
+
         public ItemInfo()
         {
             
